@@ -1,0 +1,36 @@
+/* estilos adicionales para About.jsx */
+
+/* .about-container { */
+	/* padding: 2rem; */
+	/* max-width: 800px; */
+	/* margin: 0 auto; */
+	
+/* } */
+
+
+#text1, #text2, #text3 {
+	/* background-color: rgba(255, 255, 255, 0.8); */
+	padding: 1.5rem;
+	border-radius: 10px;
+	font-size: 1.3rem;
+	line-height: 1.6;
+	color: #ffffff;
+}
+
+/* Definimos la animación */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Creamos la clase que React usará */
+.fade-in-card {
+  opacity: 0; /* Empezamos invisibles */
+  animation: fadeInUp 0.8s ease-out forwards;
+}

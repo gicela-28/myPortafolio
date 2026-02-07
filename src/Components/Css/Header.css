@@ -1,0 +1,20 @@
+.header {
+	background: rgba(0, 0, 0, 0.5);
+	background-color: transparent !important;
+	background-image: none !important;
+}
+
+#header-container {
+	position: relative;
+	width: 100%;
+	min-height: 52vh;
+	overflow: hidden;
+}
+#section-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* Centra el texto verticalmente */
+	align-items: center;
+	font-size: 24px;
+	font-weight: 700; /* Para que el título resalte */
+}

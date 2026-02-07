@@ -1,0 +1,147 @@
+/* Estilos generales para App.css */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #cd708a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff8fb1;
+}
+
+li {
+	color: rgb(251, 222, 222);
+	font-size: 14px !important;
+}
+
+
+
+/* Pantallas pequeñas (móviles en vertical) */
+@media screen and (max-width: 640px) {
+	#header-container {
+		min-height: 30vh !important;
+	}
+
+	#header-img {
+		width: auto;
+		height: 30vh;
+		object-fit: cover;
+	}
+
+	#section-content {
+		margin-top: -3rem !important;
+		text-align: center;
+		width: 100%;
+		height: 7vh !important;
+	}
+	#logo {
+		display: none;
+	}
+	h1 {
+		font-size: 1.4rem;
+	}
+	h3 {
+		font-size: 0.85rem;
+	}
+}
+
+/* Tablets pequeñas */
+@media screen and (min-width: 641px) and (max-width: 767px) {
+	#header-container {
+		min-height: 33vh !important;
+	}
+
+	#header-img {
+		width: auto;
+		height: 35vh;
+		object-fit: cover;
+	}
+
+	#section-content {
+		margin-top: -3rem !important;
+		text-align: center;
+		width: 100%;
+		height: 7vh !important;
+	}
+
+	#section-content {
+		margin-top: -2rem !important;
+		text-align: center;
+		width: 100%;
+		height: 7vh !important;
+	}
+
+	h1 {
+		font-size: 1.65rem;
+	}
+	h3 {
+		font-size: 1.15rem;
+	}
+}
+
+/* Tablets en horizontal y pantallas pequeñas en horizontal */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	#header-container {
+		min-height: 31vh !important;
+	}
+
+	#header-img {
+		/* height: auto; */
+		width: auto;
+		height: auto;
+		object-fit: cover;
+	}
+	#section-content {
+		margin-top: -2rem !important;
+		text-align: center;
+		width: auto;
+		height: 7vh !important;
+	}
+
+	h1 {
+		font-size: 1.65rem;
+	}
+	h3 {
+		font-size: 1.15rem;
+	}
+}
+
+/* Pantallas de escritorio medianas */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	#header-container {
+		min-height: 31vh !important;
+	}
+
+	#header-img {
+		/* height: auto; */
+		width: auto;
+		height: auto;
+		object-fit: cover;
+	}
+	#section-content {
+		margin-top: -2rem !important;
+		text-align: center;
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 1.85rem;
+	}
+	h3 {
+		font-size: 1.15rem;
+	}
+}
+
+/* Pantallas de escritorio grandes */
+@media screen and (min-width: 1280px) {
+	#header-img {
+		height: auto;
+		width: auto;
+	}
+}
+
+
