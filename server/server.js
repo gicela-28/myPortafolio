@@ -38,25 +38,24 @@ app.post("/api/references", async (req, res) => {
 });
 
 // Ruta POST para recibir mensajes del portafolio
-app.post('/api/contact', async (req, res) => {
-  try {
-    const { name, email, message } = req.body;
-    
-    // Creamos el nuevo documento
-    const newMessage = new Message({ name, email, message });
-    
-    // Lo guardamos en MongoDB Atlas
-    await newMessage.save();
-    
-    res.status(201).json({ success: true, message: "¡Mensaje enviado correctamente!" });
-  } catch (error) {
-    console.error("Error al guardar mensaje:", error);
-    res.status(500).json({ success: false, error: "No se pudo enviar el mensaje" });
-  }
+app.post("/api/contact", async (req, res) => {
+	try {
+		const { name, email, message } = req.body;
+
+		// Creamos el nuevo documento
+		const newMessage = new Message({ name, email, message });
+
+		// Lo guardamos en MongoDB Atlas
+		await newMessage.save();
+
+		res.status(201).json({ success: true, message: "¡Mensaje enviado correctamente!" });
+	} catch (error) {
+		console.error("Error al guardar mensaje:", error);
+		res.status(500).json({ success: false, error: "No se pudo enviar el mensaje" });
+	}
 });
 
-
 const PORT = process.env.PORT || 10000; // Render usa el 10000 por defecto
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+	console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
 });
