@@ -113,50 +113,50 @@ const Contact = () => {
 						</div>
 					</div>
 				</section>
-			{/* formulario de contacto */}
-			<section className="rounded-2xl bg-slate-900 p-10  w-full text-white">
-				<div className="flex flex-col gap-10 md:flex-row">
-					{/* Lado Izquierdo: Info */}
-					<div className="flex-1 space-y-6">
-						<h2 className="flex items-center gap-2 text-3xl font-bold">
-							<CircleUser className="text-pink-400" /> Información de Contacto
-						</h2>
-						<p>Estoy disponible para nuevos proyectos. ¡Hablemos!</p>
-					</div>
+				{/* formulario de contacto */}
+				<section className="w-full rounded-2xl bg-slate-900 p-10 text-white">
+					<div className="flex flex-col gap-10 md:flex-row">
+						{/* Lado Izquierdo: Info */}
+						<div className="flex-1 space-y-6">
+							<h2 className="flex items-center gap-2 text-3xl font-bold">
+								<CircleUser className="text-pink-400" /> Información de Contacto
+							</h2>
+							<p>Estoy disponible para nuevos proyectos. ¡Hablemos!</p>
+						</div>
 
-					{/* Lado Derecho: Formulario */}
-					<div className="flex-1">
-						<form onSubmit={handleSubmit} className="flex flex-col gap-4">
-							<input
-								type="text"
-								placeholder="Nombre"
-								value={formData.name}
-								onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-								className="rounded border border-white/20 bg-white/10 p-3 outline-none focus:border-pink-400"
-								required
-							/>
-							<input
-								type="email"
-								placeholder="Email"
-								value={formData.email}
-								onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-								className="rounded border border-white/20 bg-white/10 p-3 outline-none focus:border-pink-400"
-								required
-							/>
-							<textarea
-								placeholder="Tu mensaje"
-								value={formData.message}
-								onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-								className="h-32 rounded border border-white/20 bg-white/10 p-3 outline-none focus:border-pink-400"
-								required
-							></textarea>
-							<button type="submit" className="rounded-lg bg-pink-600 p-3 font-bold transition-all hover:bg-pink-500">
-								Enviar Mensaje
-							</button>
-						</form>
+						{/* Lado Derecho: Formulario */}
+						<div className="flex-1">
+							<form onSubmit={handleSubmit} className="flex flex-col gap-4">
+								<input
+									type="text"
+									placeholder="Nombre"
+									value={formData.name}
+									onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+									className="rounded border border-white/20 bg-white/10 p-3 outline-none focus:border-pink-400"
+									required
+								/>
+								<input
+									type="email"
+									placeholder="Email"
+									value={formData.email}
+									onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+									className="rounded border border-white/20 bg-white/10 p-3 outline-none focus:border-pink-400"
+									required
+								/>
+								<textarea
+									placeholder="Tu mensaje"
+									value={formData.message}
+									onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+									className="h-32 rounded border border-white/20 bg-white/10 p-3 outline-none focus:border-pink-400"
+									required
+								></textarea>
+								<button type="submit" className="rounded-lg bg-pink-600 p-3 font-bold transition-all hover:bg-pink-500">
+									Enviar Mensaje
+								</button>
+							</form>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 			</div>
 		</div>
 	);
