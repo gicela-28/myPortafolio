@@ -55,7 +55,7 @@ app.post("/api/contact", async (req, res) => {
 	}
 });
 
-const PORT = process.env.PORT || 3001; // Render usa el 10000 por defecto
+const PORT = process.env.PORT || 10000; // Render usa el 10000 por defecto
 app.listen(PORT, "0.0.0.0", () => {
 	console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
 });
