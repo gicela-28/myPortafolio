@@ -1,4 +1,5 @@
 import SplitText from "../Animations/SplitText.jsx";
+import "../Pages/Css/About.css";
 
 const handleAnimationComplete = () => {
 	console.log("Letter animation completed!");
@@ -9,7 +10,7 @@ const Experience = () => {
 		<div className="min-h-full p-4 text-center">
 			<SplitText
 				text="Aqui podemos ver la experiencia!"
-				className="mb-7 flex text-center text-3xl font-semibold text-white"
+				className="mb-7 flex text-center text-2xl font-semibold text-white"
 				delay={100}
 				duration={0.8}
 				ease="power3.out"
@@ -22,13 +23,13 @@ const Experience = () => {
 				onLetterAnimationComplete={handleAnimationComplete}
 			/>
 
-			<div className="max-w-8xl mx-auto flex flex-col justify-center gap-10 text-white">
-				<div className=" rounded-xl border border-white/10 bg-[#cd708a9c] p-3 text-white shadow-2xl backdrop-blur-md transition-transform hover:scale-105">
-					<h2 className="bg-white/10 py-4 text-center text-3xl font-bold">Experiencia Laboral</h2>
-					<div className="grid divide-x-2 divide-white/20 md:grid-cols-2">
-						<div className="flex flex-col justify-center gap-30 p-6 text-2xl">
-							<p>2022 - 2023: GRUPO ENERGIA DE BOGOTA: Aprendiz.</p>
-							<p>2023 - 2025: E realizado diferentes proyectos de front-end con Angular, react, css, tailwindcss, mongo </p>
+			<div className="max-w-7xl mx-auto flex flex-col justify-center gap-10 text-white">
+				<div className="rounded-xl border border-white/10 bg-[#cd708a9c] p-3 text-white shadow-2xl backdrop-blur-md transition-transform hover:scale-105">
+					<h1 className="bg-white/10 py-4 text-center font-bold text-2xl">Experiencia Laboral</h1>
+					<div className="grid divide-x-2 divide-white/20 md:grid-cols-2 justify-center text-right">
+						<div className="flex flex-col justify-center gap-25 p-6 text-2xl w-3xm  " id="divEx">
+							<p>2022 - 2023: GRUPO ENERGIA DE BOGOTA:<br/> Aprendiz.</p>
+							<p>2023 - 2025: E realizado diferentes proyectos de <br/> front-end con Angular, react, css, tailwindcss, mongo </p>
 							<p>2025 - Present: Desarrollo de Ecosistema Digital Personal y Galería de Arte.</p>
 						</div>
 
@@ -58,10 +59,10 @@ const Experience = () => {
 					</div>
 				</div>
 
-				<div className=" rounded-xl border border-white/10 bg-[#cd708a9c] p-7 text-white shadow-2xl backdrop-blur-md transition-transform hover:scale-105">
-					<h2 className="bg-white/10 py-4 text-center text-3xl font-bold">Educación</h2>
+				<div className="rounded-xl border border-white/10 bg-[#cd708a9c] p-7 text-white shadow-2xl backdrop-blur-md transition-transform hover:scale-105">
+					<h1 className="bg-white/10 py-4 text-center font-bold text-2xl">Educación</h1>
 					<div className="divide-x-2 divide-white/20">
-						<div className="top-3 flex flex-col justify-center gap-13 p-4 text-2xl">
+						<div className="top-3 flex flex-col justify-center gap-13 p-4 text-2xl" id="divEx">
 							<p>2001 AIPE/HUILA - Escuela primaria V. Pata v. el pata – Aipe/Huila </p>
 							<p>2012 AIPE/HUILA - Colegio secundario Jesus Maria Aguirre Charri </p>
 							<p>2021 CHIA/CUNDINAMARCA - ANALISIS Y DESARROLLO DE SISTEMAS DE INDORMACION - SENA</p>
