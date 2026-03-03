@@ -5,18 +5,18 @@ const Skills = () => {
 	const getOptimized = (idCloudinary) => `https://res.cloudinary.com/db5ipg1so/image/upload/f_auto,q_auto,w_500/${idCloudinary}`;
 
 	const items = [
-		{ id: "1", img: getOptimized("/v1770846056/WhatsApp_Image_2026-02-11_at_4.39.09_PM_npvpdb.jpg"), height: 595 },
-		{ id: "2", img: getOptimized("/v1770846056/WhatsApp_Image_2026-02-11_at_4.34.08_PM_njevvs.jpg"), height: 360 },
-		{ id: "3", img: getOptimized("/v1770846056/WhatsApp_Image_2026-02-11_at_4.39.46_PM_hnsmfu.jpg"), height: 495 },
-		{ id: "4", img: getOptimized("/v1770846056/WhatsApp_Image_2026-02-11_at_4.33.48_PM_n8suus.jpg"), height: 400 },
-		{ id: "5", img: getOptimized("/v1770846056/doctor_xtm3l4.jpg"), height: 595 },
-		{ id: "6", img: getOptimized("/v1770846056/blanco_jvj9vz.jpg"), height: 200 },
-		{ id: "7", img: getOptimized("/v1770846056/WhatsApp_Image_2026-03-03_at_6.05.46_PM_fifoik.jpg"), height: 595 },
-		{ id: "8", img: getOptimized("/v1770846056/nieve_k5ujpd.jpg"), height: 350 },
-		{ id: "9", img: getOptimized("/v1770846056/WhatsApp_Image_2026-02-11_at_4.39.46_PM_hnsmfu.jpg"), height: 590 },
-		{ id: "10", img: getOptimized("/v1770846056/WhatsApp_Image_2026-02-11_at_4.33.48_PM_n8suus.jpg"), height: 250 },
-		{ id: "11", img: getOptimized("/v1770846056/nieve_k5ujpd.jpg"), height: 590 },
-		{ id: "12", img: getOptimized("/v1770846056/blanco_jvj9vz.jpg"), height: 300 },
+		{ id: "1", img: getOptimized("WhatsApp_Image_2026-02-11_at_4.39.09_PM_npvpdb.jpg"), height: 380 },
+		{ id: "2", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.34.08_PM_njevvs.jpg"), height: 360 },
+		{ id: "3", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.39.46_PM_hnsmfu.jpg"), height: 495 },
+		{ id: "4", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.33.48_PM_n8suus.jpg"), height: 400 },
+		{ id: "5", img: getOptimized("v1770846056/doctor_xtm3l4.jpg"), height: 595 },
+		{ id: "6", img: getOptimized("v1770846056/blanco_jvj9vz.jpg"), height: 200 },
+		{ id: "7", img: getOptimized("v1770846056/WhatsApp_Image_2026-03-03_at_6.05.46_PM_fifoik.jpg"), height: 595 },
+		{ id: "8", img: getOptimized("v1770846056/nieve_k5ujpd.jpg"), height: 350 },
+		{ id: "9", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.39.46_PM_hnsmfu.jpg"), height: 590 },
+		{ id: "10", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.33.48_PM_n8suus.jpg"), height: 250 },
+		{ id: "11", img: getOptimized("v1770846056/nieve_k5ujpd.jpg"), height: 590 },
+		{ id: "12", img: getOptimized("v1770846056/blanco_jvj9vz.jpg"), height: 300 },
 		// ... agrega el resto igual
 	];
 
@@ -124,7 +124,7 @@ const Skills = () => {
 					</ul>
 				</section>
 			</div>
-			<div className=" min-h-screen w-full" style={{ position: " relative" }}>
+			<div className="min-h-screen w-full" style={{ position: " relative" }}>
 				<h2 className="mb-4 text-center text-2xl text-white/30 italic">Galería de trazos a mano</h2>
 				<Masonry
 					items={items}
