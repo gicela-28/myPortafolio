@@ -1,0 +1,11 @@
+@media screen and (max-width: 640px) {
+	#mimg {
+		width: 100%;
+		height: auto;
+		transform: rotate(60deg);
+	}
+	.main {
+		/* padding-top: -10px !important; */
+		background-color: aqua;
+	}
+}

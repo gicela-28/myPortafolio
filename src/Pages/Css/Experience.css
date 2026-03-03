@@ -1,6 +1,9 @@
-h1 {
-	/* font-size: 25px; */
+
+.cardExpe {
+	font-size: 13px !important;
+	font-family: "Arial", sans-serif !important;
 }
-#divEx {
-	/* font-size: 1.0rem; */
+.lista {
+	font-size: 13px !important;
+	font-family: "Arial", sans-serif !important;
 }

@@ -3,9 +3,6 @@ import { useScrollAnimation } from "../Hooks/useScrollAnimation";
 import "../Pages/Css/About.css";
 import miImagen from "/img/Curva4.png";
 
-// 1. Reemplaza la importación local por la URL de Cloudinary que copiaste
-
-
 const AnimatedSection = ({ children, delay = "0s" }) => {
 	const [ref, isVisible] = useScrollAnimation();
 
@@ -13,7 +10,7 @@ const AnimatedSection = ({ children, delay = "0s" }) => {
 		<section
 			ref={ref}
 			style={{ animationDelay: delay }}
-			className={`rounded-xl border border-white/10 bg-[#cd708a9c] p-7 shadow-2xl backdrop-blur-md transition-all hover:scale-105 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+			className={`rounded-xl p-7 shadow-2xl backdrop-blur-md transition-all hover:scale-105 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
 		>
 			{children}
 		</section>
@@ -21,17 +18,12 @@ const AnimatedSection = ({ children, delay = "0s" }) => {
 };
 
 const About = () => {
-	
 	return (
 		<div className="flex flex-col items-center">
-			<div className="md:flex-cols-1 z-10 mt-8 flex w-full max-w-5xl flex-col gap-9 text-white">
+			<div className="md:flex-cols-1 z-10  flex w-full max-w-5xl flex-col gap-5 text-white">
 				<AnimatedSection delay="0.1s">
-					<section className="fade-in-card rounded-xl border  bg-[#cd708a9c] shadow-2xl backdrop-blur-md transition-all hover:scale-105">
+					<section className="fade-in-card rounded-xl bg-[#cd708a9c] shadow-2xl backdrop-blur-md transition-all hover:scale-105">
 						<div className="relative">
-							<div className="absolute top-25 -rotate-10 left-65 z-0  opacity-95 brightness-75">
-								
-								<img src={miImagen} alt="" className="h-45 w-full object-cover" id="mimg" />
-							</div>
 							<p className="relative z-20" id="text1">
 								Soy Gicela lozano,desarrolladora Frontend con un año de experiencia transformando diseños en interfaces interactivas y funcionales. Mi enfoque
 								principal es crear experiencias de usuario fluidas y accesibles utilizando React y CSS moderno. Angular, tailwind, bootstrap entre otros. Apasionada

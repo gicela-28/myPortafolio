@@ -1,20 +1,103 @@
-.header {
-	background: rgba(0, 0, 0, 0.5);
-	background-color: transparent !important;
-	background-image: none !important;
+.header-container {
+	width: 100%;
+	/* height: auto !important; */
+	height: 43vh !important;
+	overflow: hidden;
+	position: relative;
+}
+.imagen-header img {
+	width: 200% !important;
+	height: 44vh !important;
+	/* object-fit: contain !important; */
+	display: block;
 }
 
-#header-container {
-	position: relative;
-	width: 100%;
-	min-height: 52vh;
-	overflow: hidden;
-}
-#section-content {
+.tittle-sha {
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 	display: flex;
-	flex-direction: column;
-	justify-content: center; /* Centra el texto verticalmente */
-	align-items: center;
-	font-size: 24px;
-	font-weight: 700; /* Para que el título resalte */
+}
+
+@media screen and (max-width: 640px) {
+	.header-container {
+		width: 100%;
+		max-height: 28vh !important;
+		overflow: hidden;
+	}
+	.imagen-header img {
+		width: 100% !important;
+		max-height: 28vh !important;
+		/* object-fit: cover !important; */
+		display: block;
+	}
+
+	.tittle-sha {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		/* margin-top: -30px; */
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+	}
+
+	h1 {
+		font-size: 1rem;
+	}
+	h3 {
+		font-size: 0.8rem !important;
+	}
+	.imagen-header {
+		justify-content: center;
+		align-items: center;
+		object-fit: contain;
+		height: 80%;
+	}
+}
+
+/* Tablets pequeñas */
+@media screen and (min-width: 641px) and (max-width: 767px) {
+	.header-container {
+		width: 100%;
+		height: 31vh !important;
+		overflow: hidden;
+		position: relative;
+	}
+	.imagen-header img {
+		width: 100% !important;
+		height: 31vh !important;
+		/* object-fit: cover !important; */
+		/* display: block; */
+	}
+}
+
+/* Tablets en horizontal y pantallas pequeñas en horizontal */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.header-container {
+		width: 100%;
+		/* height: auto !important; */
+		max-height: 40vh !important;
+		overflow: hidden;
+		position: relative;
+	}
+	.imagen-header img {
+		width: 200% !important;
+		max-height: 40vh !important;
+		/* object-fit: contain !important; */
+		display: block;
+	}
+}
+
+/* Pantallas de escritorio medianas */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+}
+
+/* Pantallas de escritorio grandes */
+@media screen and (min-width: 1280px) {
+	h1 {
+		font-size: 3rem;
+		/* display: flex; */
+		/* justify-content: center; */
+		/* align-items: center; */
+		/* background-color: blue; */
+	}
 }

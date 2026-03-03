@@ -1,0 +1,22 @@
+.card {
+	font-size: 12px;
+}
+#content-grid {
+	font-size: 11px;
+}
+
+h1 {
+	font-size: 18px;
+}
+@media screen and (max-width: 640px) {
+	#content-grid {
+		width: 70vh;
+		grid-template-columns: repeat(1, 1fr);
+
+		justify-content: center;
+	}
+	.card-content {
+		font-size: 11px;
+		width: 100% !important;
+	}
+}

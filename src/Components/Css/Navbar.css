@@ -1,0 +1,14 @@
+@media screen and (max-width: 640px) {
+	.logo {
+		display: none;
+	}
+
+	#nav-content {
+		height: 8% !important;
+		padding-block: none !important;
+	}
+	#nav-container {
+		padding-block: 0.2rem !important;
+
+	}
+}
