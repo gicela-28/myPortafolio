@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Components/Header";
-import "../Css/Layout.css";
+import "../Layout/css/Layout.css";
+
 import miImagen from "/img/1800.png";
 import ScrollVelocityCompnents from "../Pages/ScrollVelocityComponents.jsx";
 
