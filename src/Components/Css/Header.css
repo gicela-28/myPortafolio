@@ -81,7 +81,7 @@
 	}
 	.imagen-header img {
 		width: 200% !important;
-		max-height: 40vh !important;
+		max-height: 30vh !important;
 		/* object-fit: contain !important; */
 		display: block;
 	}

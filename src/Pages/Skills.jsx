@@ -17,6 +17,8 @@ const Skills = () => {
 		{ id: "10", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.33.48_PM_n8suus.jpg"), height: 250 },
 		{ id: "11", img: getOptimized("v1770846056/nieve_k5ujpd.jpg"), height: 590 },
 		{ id: "12", img: getOptimized("v1770846056/blanco_jvj9vz.jpg"), height: 300 },
+		{ id: "13", img: getOptimized("v1770846056/cld-sample-4.jpg"), height: 360 },
+		
 
 		// ... agrega el resto igual
 	];
@@ -92,7 +94,7 @@ const Skills = () => {
 	// ];
 
 	return (
-		<div className="flex flex-col items-center gap-8">
+		<div className="flex flex-col min-h-screen items-center gap-8">
 			<div className="z-10 text-center">
 				<h2 className="text-2xl text-white"> MI STACK DE HABILIDADES</h2>
 			</div>

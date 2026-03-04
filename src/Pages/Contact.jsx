@@ -73,14 +73,14 @@ const Contact = () => {
 						<h2 className="text-xl font-bold italic">Redes Sociales</h2>
 					</div>
 					<div className="flex flex-col gap-4">
-						<a href="#" className="group flex items-center justify-between rounded-xl border border-white/5 bg-white/5 p-4 transition-colors hover:bg-white/10">
+						<a href="www.linkedin.com/in/gicela-lozano" className="group flex items-center justify-between rounded-xl border border-white/5 bg-white/5 p-4 transition-colors hover:bg-white/10">
 							<div className="flex items-center gap-4">
 								<Linkedin size={24} className="transition-colors group-hover:text-blue-400" />
 								<span className="font-semibold">LinkedIn</span>
 							</div>
 							<ExternalLink size={14} className="opacity-40 group-hover:opacity-100" />
 						</a>
-						<a href="#" className="group flex items-center justify-between rounded-xl border border-white/5 bg-white/5 p-4 transition-colors hover:bg-white/10">
+						<a href="https://github.com/gicela-28/myPortafolio.git" className="group flex items-center justify-between rounded-xl border border-white/5 bg-white/5 p-4 transition-colors hover:bg-white/10">
 							<div className="flex items-center gap-4">
 								<Github size={24} className="transition-colors group-hover:text-gray-400" />
 								<span className="font-semibold">GitHub</span>

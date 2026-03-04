@@ -8,6 +8,19 @@
 h1 {
 	font-size: 18px;
 }
+
+.masonry-item {
+	background-color: rgba(205, 112, 138, 0.1); /* Rosa muy suave */
+	border-radius: 12px;
+	overflow: hidden;
+	transition: transform 0.3s ease;
+}
+.min-h-screen {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 50px;
+}
+
 @media screen and (max-width: 640px) {
 	#content-grid {
 		width: 70vh;
