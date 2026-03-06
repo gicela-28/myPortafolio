@@ -10,6 +10,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@emailjs/browser": "^4.4.1",
 		"@gsap/react": "^2.1.2",
 		"@heroui/scroll-shadow": "^2.3.18",
 		"@heroui/system": "^2.4.23",
@@ -28,6 +29,7 @@
 		"prettier-plugin-tailwindcss": "^0.7.1",
 		"react": "^19.2.3",
 		"react-dom": "^19.2.3",
+		"react-helmet-async": "^3.0.0",
 		"react-router": "^7.9.6",
 		"react-router-dom": "^7.9.6",
 		"tailwindcss": "^4.1.17"

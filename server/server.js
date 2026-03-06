@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const Message = require("./models/Message"); // Importamos el modelo de mensajes
+const { sendContactNotification, sendConfirmationEmail } = require('./services/emailService'); // Importamos el servicio de email
 require("dotenv").config();
 
 const Reference = require("./models/Reference"); // Importamos tu modelo
@@ -42,16 +43,41 @@ app.post("/api/contact", async (req, res) => {
 	try {
 		const { name, email, message } = req.body;
 
+		// Validación básica
+		if (!name || !email || !message) {
+			return res.status(400).json({
+				success: false,
+				error: "Todos los campos son obligatorios"
+			});
+		}
+
 		// Creamos el nuevo documento
 		const newMessage = new Message({ name, email, message });
 
 		// Lo guardamos en MongoDB Atlas
 		await newMessage.save();
 
-		res.status(201).json({ success: true, message: "¡Mensaje enviado correctamente!" });
+		// Enviamos notificación por email
+		const notificationResult = await sendContactNotification({ name, email, message });
+
+		// Enviamos correo de confirmación al cliente
+		const confirmationResult = await sendConfirmationEmail({ name, email });
+
+		// Verificamos si los emails se enviaron correctamente
+		if (!notificationResult.success || !confirmationResult.success) {
+			console.warn("⚠️ Advertencia: Los emails no pudieron enviarse, pero el mensaje se guardó en la base de datos");
+		}
+
+		res.status(201).json({
+			success: true,
+			message: "¡Mensaje enviado correctamente! Te responderé pronto."
+		});
 	} catch (error) {
-		console.error("Error al guardar mensaje:", error);
-		res.status(500).json({ success: false, error: "No se pudo enviar el mensaje" });
+		console.error("Error al procesar mensaje:", error);
+		res.status(500).json({
+			success: false,
+			error: "No se pudo enviar el mensaje. Inténtalo de nuevo."
+		});
 	}
 });
 

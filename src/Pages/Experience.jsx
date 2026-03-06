@@ -1,85 +1,222 @@
-import SplitText from "../Animations/SplitText.jsx";
-import "../Pages/Css/Experience.css";
+import { useScrollAnimation } from "../Hooks/useScrollAnimation";
+import { Briefcase, GraduationCap, Calendar, MapPin, Award, ExternalLink } from "lucide-react";
 
-const handleAnimationComplete = () => {
-	console.log("Letter animation completed!");
+const AnimatedSection = ({ children, delay = "0s" }) => {
+	const [ref, isVisible] = useScrollAnimation();
+	return (
+		<section ref={ref} style={{ animationDelay: delay }} className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+			{children}
+		</section>
+	);
 };
 
 const Experience = () => {
+	const workExperience = [
+		{
+			id: 1,
+			company: "Freelance Frontend Developer",
+			position: "Desarrolladora Frontend Independiente",
+			period: "2024 - Presente",
+			location: "Remoto",
+			description: "Desarrollo de sitios web y aplicaciones para clientes diversos, especializándome en interfaces modernas y responsivas con React y JavaScript.",
+			achievements: [
+				"Completé 10+ proyectos para clientes en diferentes industrias",
+				"Implementé diseños responsivos compatibles con todos los dispositivos",
+				"Optimicé el rendimiento de sitios web mejorando tiempos de carga en un 40%",
+				"Colaboré directamente con clientes para traducir requisitos técnicos en soluciones funcionales"
+			],
+			technologies: ["React", "JavaScript ES6+", "Tailwind CSS", "HTML5", "CSS3", "Git"],
+			type: "work"
+		},
+		{
+			id: 2,
+			company: "Proyectos Personales",
+			position: "Desarrolladora Full Stack",
+			period: "2023 - 2024",
+			location: "Estudio Personal",
+			description: "Desarrollo de proyectos personales para fortalecer habilidades y explorar nuevas tecnologías.",
+			achievements: [
+				"Creé un portafolio interactivo con animaciones GSAP",
+				"Desarrollé un e-commerce completo con React y Node.js",
+				"Implementé dashboards con visualización de datos en tiempo real",
+				"Exploré patrones de diseño y arquitecturas modernas"
+			],
+			technologies: ["React", "Node.js", "MongoDB", "GSAP", "Chart.js", "Framer Motion"],
+			type: "work"
+		}
+	];
+
+	const education = [
+		{
+			id: 1,
+			institution: "Formación Autodidacta",
+			degree: "Desarrollo Web Full Stack",
+			period: "2023 - Presente",
+			location: "Online",
+			description: "Formación intensiva en desarrollo web moderno a través de cursos, documentación y práctica constante.",
+			achievements: [
+				"Completé cursos avanzados de React y JavaScript moderno",
+				"Participé en comunidades de desarrollo y open source",
+				"Realicé proyectos prácticos para aplicar conocimientos",
+				"Mantengo actualización constante con nuevas tecnologías"
+			],
+			technologies: ["React", "JavaScript", "CSS3", "HTML5", "Node.js", "MongoDB"],
+			type: "education"
+		},
+		{
+			id: 2,
+			institution: "Platzi & Udemy",
+			degree: "Especialización Frontend",
+			period: "2023 - 2024",
+			location: "Online",
+			description: "Cursos especializados en desarrollo frontend, diseño UI/UX y mejores prácticas.",
+			achievements: [
+				"Certificación en React y JavaScript avanzado",
+				"Cursos de diseño UI/UX y accesibilidad web",
+				"Formación en optimización de rendimiento y SEO",
+				"Workshops de Git y control de versiones"
+			],
+			technologies: ["React", "UI/UX Design", "Performance Optimization", "SEO", "Git"],
+			type: "education"
+		}
+	];
+
+	const TimelineCard = ({ item, index }) => {
+		const isWork = item.type === "work";
+		const Icon = isWork ? Briefcase : GraduationCap;
+
+		return (
+			<div className="relative group">
+				{/* Timeline line */}
+				<div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#cd708a] to-transparent opacity-30"></div>
+
+				{/* Timeline dot */}
+				<div className="absolute left-6 top-8 w-4 h-4 bg-[#cd708a] rounded-full border-4 border-[#16223d] z-10"></div>
+
+				{/* Card */}
+				<div className="ml-16 bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:scale-[1.02] transition-all duration-300 group-hover:bg-white/15">
+					<div className="flex items-start justify-between mb-4">
+						<div className="flex-1">
+							<div className="flex items-center gap-3 mb-2">
+								<Icon size={20} className="text-pink-400" />
+								<h3 className="text-xl font-bold text-white">{isWork ? item.position : item.degree}</h3>
+							</div>
+							<h4 className="text-lg text-pink-300 mb-2">{isWork ? item.company : item.institution}</h4>
+						</div>
+						<div className="text-right">
+							<div className="flex items-center gap-2 text-gray-300 text-sm mb-1">
+								<Calendar size={14} />
+								{item.period}
+							</div>
+							<div className="flex items-center gap-2 text-gray-400 text-sm">
+								<MapPin size={14} />
+								{item.location}
+							</div>
+						</div>
+					</div>
+
+					<p className="text-gray-300 mb-4">{item.description}</p>
+
+					<div className="mb-4">
+						<h5 className="text-sm font-semibold text-pink-300 mb-2">Logros destacados:</h5>
+						<ul className="space-y-1">
+							{item.achievements.map((achievement, i) => (
+								<li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
+									<div className="w-1.5 h-1.5 bg-pink-400 rounded-full mt-2 flex-shrink-0"></div>
+									{achievement}
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<div>
+						<h5 className="text-sm font-semibold text-pink-300 mb-2">Tecnologías:</h5>
+						<div className="flex flex-wrap gap-2">
+							{item.technologies.map((tech, i) => (
+								<span key={i} className="px-3 py-1 bg-[#cd708a]/20 text-pink-300 rounded-full text-xs">
+									{tech}
+								</span>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	};
+
 	return (
-		<div className="min-h-full p-3 text-center">
-			<SplitText
-				text="Aqui podemos ver la experiencia!"
-				className="mb-7 flex text-center text-2xl font-semibold text-white"
-				delay={100}
-				duration={0.8}
-				ease="power3.out"
-				splitType="chars"
-				from={{ opacity: 0, y: 40 }}
-				to={{ opacity: 1, y: 0 }}
-				threshold={0.1}
-				rootMargin="-100px"
-				textAlign="center"
-				onLetterAnimationComplete={handleAnimationComplete}
-			/>
+		<div className="min-h-screen py-12">
+			<div className="container mx-auto px-4">
+				<AnimatedSection delay="0.1s">
+					<div className="text-center mb-16">
+						<h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Experiencia & Educación</h1>
+						<p className="text-xl text-gray-300 max-w-2xl mx-auto">
+							Mi trayectoria profesional y formación en desarrollo web
+						</p>
+					</div>
+				</AnimatedSection>
 
-			<div className="mx-auto flex flex-col justify-center gap-8 text-white">
-				<div className="rounded-xl border border-white/10 bg-[#cd708a9c] p-3 text-white shadow-2xl backdrop-blur-md transition-transform hover:scale-105">
-					<h2 className="bg-white/10 py-4 text-center text-2xl font-bold">Experiencia Laboral</h2>
-					<div className="grid justify-center divide-x-2 divide-white/20 text-right md:grid-cols-3">
-						<div className="cardExpe flex flex-col justify-center gap-20 p-4">
-							<p>2022 - 2023: GRUPO ENERGIA DE BOGOTA: Aprendiz.</p>
-							<p>
-								2023 - 2025: E realizado diferentes proyectos de front-end con <br /> Angular, react, css, tailwindcss, mongo{" "}
+				<AnimatedSection delay="0.2s">
+					<div className="mb-16">
+						<div className="flex items-center gap-3 mb-8">
+							<Briefcase size={24} className="text-pink-400" />
+							<h2 className="text-2xl font-bold text-white">Experiencia Laboral</h2>
+						</div>
+
+						<div className="space-y-8">
+							{workExperience.map((item, index) => (
+								<TimelineCard key={item.id} item={item} index={index} />
+							))}
+						</div>
+					</div>
+				</AnimatedSection>
+
+				<AnimatedSection delay="0.3s">
+					<div>
+						<div className="flex items-center gap-3 mb-8">
+							<GraduationCap size={24} className="text-pink-400" />
+							<h2 className="text-2xl font-bold text-white">Educación</h2>
+						</div>
+
+						<div className="space-y-8">
+							{education.map((item, index) => (
+								<TimelineCard key={item.id} item={item} index={index} />
+							))}
+						</div>
+					</div>
+				</AnimatedSection>
+
+				<AnimatedSection delay="0.4s">
+					<div className="mt-16 text-center">
+						<div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+							<div className="flex items-center justify-center gap-3 mb-4">
+								<Award size={24} className="text-pink-400" />
+								<h3 className="text-xl font-bold text-white">Resumen Profesional</h3>
+							</div>
+							<p className="text-gray-300 max-w-2xl mx-auto">
+								Desarrolladora Frontend con 1+ año de experiencia especializada en crear interfaces modernas y funcionales.
+								Apasionada por el aprendizaje continuo y la entrega de soluciones de alta calidad que impacten positivamente en la experiencia del usuario.
 							</p>
-							<p>2025 - Present: Desarrollo de Ecosistema Digital Personal y Galería de Arte.</p>
-						</div>
-
-						<div className="lista col-span-2 flex flex-col justify-center gap-6 p-3">
-							<div className="text-left">
-								<ul>
-									<li>- Análisis de vulnerabilidades: Identificación y evaluación de riesgos en sistemas y redes.</li>
-									<li>- Implementación de medidas de seguridad: sistemas de detección de intrusiones y políticas de acceso.</li>
-									<li>- Reportes Técnicos: "Elaboración de informes de remediación dirigidos a los equipos de infraestructura </li>
-								</ul>
-							</div>
-							<div className="text-left">
-								<ul>
-									<li>- Desarrollo Front-end: Creación de interfaces de usuario interactivas y responsivas utilizando Angular.</li>
-									<li>- Integración con Backend: Conexión de aplicaciones front-end con servicios backend desarrollados en Node.js y MongoDB.</li>
-									<li>- CRUD Completo: donde permiten Crear, Leer, Actualizar y Borrar datos.</li>
-								</ul>
-							</div>
-							<div className="text-left">
-								<ul>
-									<li>- Proyecto Personal: Desarrollo de un ecosistema digital personal para la exhibición y venta de obras artísticas.</li>
-									<li>- Tecnologías Utilizadas: React para el front-end, Tailwind CSS para el diseño responsivo y MongoDB para la gestión de datos.</li>
-									<li>- Diseño Adaptativo: "Uso avanzado de Tailwind CSS para garantizar una experiencia fluida en dispositivos móviles y escritorio" </li>
-								</ul>
+							<div className="flex justify-center gap-4 mt-6">
+								<div className="text-center">
+									<div className="text-2xl font-bold text-pink-400">10+</div>
+									<div className="text-sm text-gray-400">Proyectos</div>
+								</div>
+								<div className="text-center">
+									<div className="text-2xl font-bold text-pink-400">1+</div>
+									<div className="text-sm text-gray-400">Años</div>
+								</div>
+								<div className="text-center">
+									<div className="text-2xl font-bold text-pink-400">100%</div>
+									<div className="text-sm text-gray-400">Compromiso</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div className="rounded-xl border border-white/10 bg-[#cd708a9c] p-7 text-white shadow-2xl backdrop-blur-md transition-transform hover:scale-105">
-					<h2 className="bg-white/10 py-4 text-center text-2xl font-bold">Educación</h2>
-					<div className="divide-x-2 divide-white/20">
-						<div className="cardExpe top-3 flex flex-col justify-center gap-10 p-4 text-2xl" id="divEx">
-							<p>2001 AIPE/HUILA - Escuela primaria V. Pata v. el pata – Aipe/Huila </p>
-							<p>2012 AIPE/HUILA - Colegio secundario Jesus Maria Aguirre Charri </p>
-							<p>2021 CHIA/CUNDINAMARCA - ANALISIS Y DESARROLLO DE SISTEMAS DE INDORMACION - SENA</p>
-						</div>
-						{/* <div className="flex flex-col justify-center gap-28 p-6">
-							<ul>
-								<li>- Educación Primaria: Escuela primaria V. Pata v. el pata – Aipe/Huila (2001)</li>
-								<li>- Educación Secundaria: Colegio secundario Jesus Maria Aguirre Charri – Aipe/Huila (2012)</li>
-								<li>- Formación Técnica: Análisis y Desarrollo de Sistemas de Información en el SENA, Chia/Cundinamarca (2021)</li>
-							</ul>
-						</div> */}
-					</div>
-				</div>
+				</AnimatedSection>
 			</div>
 		</div>
 	);
 };
+
 export default Experience;

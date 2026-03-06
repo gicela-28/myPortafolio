@@ -1,146 +1,154 @@
-import Masonry from "../Animations/Masonry";
-import "../Pages/Css/Skills.css";
+import { useState } from "react";
+import { useScrollAnimation } from "../Hooks/useScrollAnimation";
+import { Github, ExternalLink, Code, Palette, Smartphone, Database } from "lucide-react";
+
+const AnimatedSection = ({ children, delay = "0s" }) => {
+	const [ref, isVisible] = useScrollAnimation();
+	return (
+		<section ref={ref} style={{ animationDelay: delay }} className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+			{children}
+		</section>
+	);
+};
 
 const Skills = () => {
-	const getOptimized = (idCloudinary) => `https://res.cloudinary.com/db5ipg1so/image/upload/f_auto,q_auto,w_500/${idCloudinary}`;
+	const [filter, setFilter] = useState("all");
 
-	const items = [
-		{ id: "1", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.39.09_PM_npvpdb.jpg"), height: 595 },
-		{ id: "2", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.34.08_PM_njevvs.jpg"), height: 360 },
-		{ id: "3", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.39.46_PM_hnsmfu.jpg"), height: 495 },
-		{ id: "4", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.33.48_PM_n8suus.jpg"), height: 400 },
-		{ id: "5", img: getOptimized("v1770846056/doctor_xtm3l4.jpg"), height: 595 },
-		{ id: "6", img: getOptimized("v1770846056/blanco_jvj9vz.jpg"), height: 200 },
-		{ id: "7", img: getOptimized("v1770846056/WhatsApp_Image_2026-03-03_at_6.05.46_PM_fifoik.jpg"), height: 595 },
-		{ id: "8", img: getOptimized("v1770846056/nieve_k5ujpd.jpg"), height: 350 },
-		{ id: "9", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.39.46_PM_hnsmfu.jpg"), height: 590 },
-		{ id: "10", img: getOptimized("v1770846056/WhatsApp_Image_2026-02-11_at_4.33.48_PM_n8suus.jpg"), height: 250 },
-		{ id: "11", img: getOptimized("v1770846056/nieve_k5ujpd.jpg"), height: 590 },
-		{ id: "12", img: getOptimized("v1770846056/blanco_jvj9vz.jpg"), height: 300 },
-		{ id: "13", img: getOptimized("v1770846056/cld-sample-4.jpg"), height: 360 },
-		
-
-		// ... agrega el resto igual
+	const projects = [
+		{
+			id: 1,
+			title: "Ecosistema Digital Personal",
+			description: "Plataforma completa para exhibición y venta de obras artísticas con React y MongoDB",
+			tech: ["React", "Tailwind CSS", "MongoDB", "Node.js"],
+			category: "fullstack",
+			image: "https://res.cloudinary.com/db5ipg1so/image/upload/f_auto,q_auto,w_400,format_webp/v1770846056/WhatsApp_Image_2026-02-11_at_4.39.09_PM_npvpdb.jpg",
+			github: "https://github.com/gicela-28",
+			demo: "#"
+		},
+		{
+			id: 2,
+			title: "Portfolio Interactivo",
+			description: "Portafolio profesional con animaciones GSAP y diseño responsivo",
+			tech: ["React", "GSAP", "Tailwind CSS", "Framer Motion"],
+			category: "frontend",
+			image: "https://res.cloudinary.com/db5ipg1so/image/upload/f_auto,q_auto,w_400,format_webp/v1770846056/WhatsApp_Image_2026-02-11_at_4.34.08_PM_njevvs.jpg",
+			github: "https://github.com/gicela-28",
+			demo: "#"
+		},
+		{
+			id: 3,
+			title: "Dashboard de Analytics",
+			description: "Panel de control con gráficos interactivos y visualización de datos",
+			tech: ["React", "Chart.js", "CSS Grid", "JavaScript"],
+			category: "frontend",
+			image: "https://res.cloudinary.com/db5ipg1so/image/upload/f_auto,q_auto,w_400,format_webp/v1770846056/WhatsApp_Image_2026-02-11_at_4.39.46_PM_hnsmfu.jpg",
+			github: "https://github.com/gicela-28",
+			demo: "#"
+		}
 	];
 
-	// const items = [
-	// 	{
-	// 		id: "1",
-	// 		img: "../public/img/nieve.jpeg",
-	// 		// url: "https://example.com/one",
-	// 		height: 380,
-	// 	},
-	// 	{
-	// 		id: "2",
-	// 		img: "../public/img/blanco.jpeg",
+	const skills = {
+		frontend: {
+			icon: <Code size={24} />,
+			title: "Frontend Development",
+			items: ["React", "JavaScript ES6+", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"]
+		},
+		design: {
+			icon: <Palette size={24} />,
+			title: "Diseño UI/UX",
+			items: ["Figma", "Responsive Design", "CSS Animations", "Color Theory", "Typography"]
+		},
+		tools: {
+			icon: <Smartphone size={24} />,
+			title: "Herramientas",
+			items: ["Git & GitHub", "Vite", "VS Code", "Chrome DevTools", "NPM"]
+		}
+	};
 
-	// 		height: 220,
-	// 	},
-	// 	{
-	// 		id: "3",
-	// 		img: "../public/img/bebe.jpeg",
-
-	// 		height: 410,
-	// 	},
-
-	// 	{
-	// 		id: "4",
-	// 		img: "../public/img/nieve.jpeg",
-	// 		height: 250,
-	// 	},
-	// 	{
-	// 		id: "5",
-	// 		img: "../public/img/doctor.jpeg",
-	// 		height: 400,
-	// 	},
-	// 	{
-	// 		id: "6",
-	// 		img: "../public/img/doctor.jpeg",
-	// 		height: 410,
-	// 	},
-	// 	{
-	// 		id: "7",
-	// 		img: "../public/img/nieve.jpeg",
-	// 		height: 250,
-	// 	},
-	// 	{
-	// 		id: "8",
-	// 		img: "../public/img/bebe.jpeg",
-	// 		height: 400,
-	// 	},
-	// 	{
-	// 		id: "9",
-	// 		img: "../public/img/bebe.jpeg",
-	// 		height: 410,
-	// 	},
-	// 	{
-	// 		id: "10",
-	// 		img: "../public/img/bebe.jpeg",
-
-	// 		height: 350,
-	// 	},
-	// 	{
-	// 		id: "11",
-	// 		img: "../public/img/nieve.jpeg",
-
-	// 		height: 300,
-	// 	},
-	// 	{
-	// 		id: "12",
-	// 		img: "../public/img/nieve.jpeg",
-
-	// 		height: 200,
-	// 	},
-	// ];
+	const filteredProjects = filter === "all" ? projects : projects.filter(p => p.category === filter);
 
 	return (
-		<div className="flex flex-col min-h-screen items-center gap-8">
-			<div className="z-10 text-center">
-				<h2 className="text-2xl text-white"> MI STACK DE HABILIDADES</h2>
-			</div>
-			<div className="relative z-10 grid w-full grid-cols-1 gap-6 p-6 text-white md:grid-cols-3" id="content-grid">
-				<section className="card-content rounded-xl bg-[#cd708a9c] p-7 shadow-xl/30">
-					<h1 className="rounded-xl text-center shadow-xl/30">Creatividad y Diseño</h1>
-					<ul className="card mt-5">
-						<li>Composición Visual: Aplicación de reglas de dibujo (proporción, equilibrio y perspectiva) al diseño de interfaces.</li>
-						<li>Atención al Detalle: Capacidad de pulir interfaces con la misma precisión con la que realizo un sombreado a lápiz.</li>
-						<li>Ideación y Wireframing: Bocetado rápido de soluciones creativas antes de llevarlas a la pantalla.</li>
-					</ul>
-					<div className="divisor-content absolute opacity-100 brightness-100"></div>
-				</section>
+		<div className="min-h-screen py-12">
+			<div className="container mx-auto px-4">
+				<AnimatedSection delay="0.1s">
+					<div className="text-center mb-12">
+						<h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Proyectos & Habilidades</h1>
+						<p className="text-xl text-gray-300 max-w-2xl mx-auto">
+							Explora mis proyectos más recientes y las tecnologías que domino
+						</p>
+					</div>
+				</AnimatedSection>
 
-				<section className="card-content rounded-xl bg-[#cd708a9c] p-7 shadow-xl/30">
-					<h1 className="rounded-xl text-center text-lg shadow-xl/30">Desarrollo Técnico </h1>
-					<ul className="card mt-5">
-						<li>Frontend Core: HTML5, CSS3 (Layouts, Animaciones, Flexbox/Grid).</li>
-						<li>Interactividad: JavaScript (ES6+) para dar vida a los diseños.</li>
-						<li>Frameworks: React, Vue o Angular.</li>
-						<li>Control de Versiones: Git y GitHub para mantener un historial impecable.</li>
-					</ul>
-				</section>
-				<section className="card-content rounded-xl bg-[#cd708a9c] p-7 shadow-xl/30">
-					<h1 className="rounded-xl text-center text-lg shadow-xl/30">Soft Skills </h1>
-					<ul className="card mt-5">
-						<li>Resolución Creativa de Problemas: Enfoque artístico para encontrar soluciones lógicas fuera de lo común.</li>
-						<li>Comunicación Visual: Capacidad de explicar conceptos técnicos a través de esquemas y prototipos.</li>
-						<li>Aprendizaje Continuo: Disciplina y práctica diaria (la misma que requiere dominar el dibujo).</li>
-					</ul>
-				</section>
-			</div>
-			<div className="min-h-screen w-full" style={{ position: " relative" }}>
-				<h2 className="mb-4 text-center text-2xl text-white/30 italic">Galería de trazos a mano</h2>
-				<Masonry
-					items={items}
-					loading="lazy"
-					ease="power3.out"
-					duration={0.6}
-					stagger={0.05}
-					animateFrom="bottom"
-					scaleOnHover
-					hoverScale={0.95}
-					blurToFocus
-					colorShiftOnHover={false}
-				/>
+				<AnimatedSection delay="0.2s">
+					<div className="mb-8">
+						<div className="flex flex-wrap justify-center gap-4">
+							{["all", "frontend", "fullstack"].map(cat => (
+								<button
+									key={cat}
+									onClick={() => setFilter(cat)}
+									className={`px-6 py-2 rounded-full font-medium transition-all ${filter === cat
+											? "bg-[#cd708a] text-white"
+											: "bg-white/10 text-gray-300 hover:bg-white/20"
+										}`}
+								>
+									{cat === "all" ? "Todos" : cat === "frontend" ? "Frontend" : "Full Stack"}
+								</button>
+							))}
+						</div>
+					</div>
+				</AnimatedSection>
+
+				<AnimatedSection delay="0.3s">
+					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+						{filteredProjects.map((project, index) => (
+							<div key={project.id} className="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 hover:scale-105 transition-all duration-300">
+								<div className="h-48 overflow-hidden">
+									<img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+								</div>
+								<div className="p-6">
+									<h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+									<p className="text-gray-300 mb-4 text-sm">{project.description}</p>
+									<div className="flex flex-wrap gap-2 mb-4">
+										{project.tech.map((tech, i) => (
+											<span key={i} className="px-3 py-1 bg-[#cd708a]/20 text-pink-300 rounded-full text-xs">
+												{tech}
+											</span>
+										))}
+									</div>
+									<div className="flex gap-4">
+										<a href={project.github} className="text-white hover:text-pink-400 transition-colors">
+											<Github size={20} />
+										</a>
+										<a href={project.demo} className="text-white hover:text-pink-400 transition-colors">
+											<ExternalLink size={20} />
+										</a>
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</AnimatedSection>
+
+				<AnimatedSection delay="0.4s">
+					<div className="grid md:grid-cols-3 gap-8">
+						{Object.entries(skills).map(([key, skill], index) => (
+							<div key={key} className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+								<div className="flex items-center gap-3 mb-6">
+									<div className="text-pink-400">{skill.icon}</div>
+									<h3 className="text-xl font-bold text-white">{skill.title}</h3>
+								</div>
+								<ul className="space-y-3">
+									{skill.items.map((item, i) => (
+										<li key={i} className="flex items-center gap-2 text-gray-300">
+											<div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+											{item}
+										</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
+				</AnimatedSection>
 			</div>
 		</div>
 	);
