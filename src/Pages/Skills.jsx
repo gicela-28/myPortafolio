@@ -87,8 +87,8 @@ const Skills = () => {
 									key={cat}
 									onClick={() => setFilter(cat)}
 									className={`px-6 py-2 rounded-full font-medium transition-all ${filter === cat
-											? "bg-[#cd708a] text-white"
-											: "bg-white/10 text-gray-300 hover:bg-white/20"
+										? "bg-[#cd708a] text-white"
+										: "bg-white/10 text-gray-300 hover:bg-white/20"
 										}`}
 								>
 									{cat === "all" ? "Todos" : cat === "frontend" ? "Frontend" : "Full Stack"}
@@ -100,7 +100,7 @@ const Skills = () => {
 
 				<AnimatedSection delay="0.3s">
 					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-						{filteredProjects.map((project, index) => (
+						{filteredProjects.map((project) => (
 							<div key={project.id} className="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 hover:scale-105 transition-all duration-300">
 								<div className="h-48 overflow-hidden">
 									<img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
@@ -131,7 +131,7 @@ const Skills = () => {
 
 				<AnimatedSection delay="0.4s">
 					<div className="grid md:grid-cols-3 gap-8">
-						{Object.entries(skills).map(([key, skill], index) => (
+						{Object.entries(skills).map(([key, skill]) => (
 							<div key={key} className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
 								<div className="flex items-center gap-3 mb-6">
 									<div className="text-pink-400">{skill.icon}</div>

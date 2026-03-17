@@ -81,7 +81,7 @@ const Experience = () => {
 		}
 	];
 
-	const TimelineCard = ({ item, index }) => {
+	const TimelineCard = ({ item }) => {
 		const isWork = item.type === "work";
 		const Icon = isWork ? Briefcase : GraduationCap;
 
@@ -164,8 +164,8 @@ const Experience = () => {
 						</div>
 
 						<div className="space-y-8">
-							{workExperience.map((item, index) => (
-								<TimelineCard key={item.id} item={item} index={index} />
+							{workExperience.map((item) => (
+								<TimelineCard key={item.id} item={item} />
 							))}
 						</div>
 					</div>
@@ -179,8 +179,8 @@ const Experience = () => {
 						</div>
 
 						<div className="space-y-8">
-							{education.map((item, index) => (
-								<TimelineCard key={item.id} item={item} index={index} />
+							{education.map((item) => (
+								<TimelineCard key={item.id} item={item} />
 							))}
 						</div>
 					</div>

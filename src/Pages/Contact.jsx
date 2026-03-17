@@ -20,7 +20,7 @@ const Contact = () => {
 				alert("¡Gracias! Tu mensaje ha sido guardado.");
 				setFormData({ name: "", email: "", message: "" });
 			}
-		} catch (error) {
+		} catch {
 			alert("Hubo un error al conectar con el servidor.");
 		}
 	};
