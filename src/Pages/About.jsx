@@ -1,27 +1,14 @@
 // import "../App.css";
-import { useScrollAnimation } from "../Hooks/useScrollAnimation";
+
 import "../Pages/Css/About.css";
 
 
-const AnimatedSection = ({ children, delay = "0s" }) => {
-	const [ref, isVisible] = useScrollAnimation();
-
-	return (
-		<section
-			ref={ref}
-			style={{ animationDelay: delay }}
-			className={`rounded-xl p-7 shadow-2xl backdrop-blur-md transition-all hover:scale-105 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
-		>
-			{children}
-		</section>
-	);
-};
 
 const About = () => {
 	return (
 		<div className="flex flex-col items-center min-h-screen py-12">
 			<div className="z-10 flex w-full max-w-5xl flex-col gap-8 text-white">
-				<AnimatedSection delay="0.1s">
+				{/* <AnimatedSection delay="0.1s"> */}
 					<section className="fade-in-card rounded-xl bg-[#cd708a9c] shadow-2xl backdrop-blur-md transition-all hover:scale-105 p-8">
 						<div className="flex items-start gap-6">
 							<div className="flex-shrink-0">
@@ -38,9 +25,9 @@ const About = () => {
 							</div>
 						</div>
 					</section>
-				</AnimatedSection>
+				{/* </AnimatedSection> */}
 
-				<AnimatedSection delay="0.2s">
+				{/* <AnimatedSection delay="0.2s"> */}
 					<section className="fade-in-card rounded-xl border border-white/10 bg-[#cd708a9c] p-8 shadow-2xl backdrop-blur-md transition-all hover:scale-105">
 						<h2 className="text-2xl font-bold mb-6 text-pink-200">Mi Especialidad</h2>
 						<div className="grid md:grid-cols-2 gap-6">
@@ -64,9 +51,9 @@ const About = () => {
 							</div>
 						</div>
 					</section>
-				</AnimatedSection>
+				{/* </AnimatedSection> */}
 
-				<AnimatedSection delay="0.3s">
+				{/* <AnimatedSection delay="0.3s"> */}
 					<section className="fade-in-card rounded-xl border border-white/10 bg-[#cd708a9c] p-8 shadow-2xl backdrop-blur-md transition-all hover:scale-105">
 						<h2 className="text-2xl font-bold mb-6 text-pink-200">Mi Filosofía</h2>
 						<div className="space-y-4 text-gray-200">
@@ -81,7 +68,7 @@ const About = () => {
 							</p>
 						</div>
 					</section>
-				</AnimatedSection>
+				{/* </AnimatedSection> */}
 			</div>
 		</div>
 	);

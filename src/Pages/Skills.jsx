@@ -4,6 +4,7 @@ import { Github, ExternalLink, Code, Palette, Smartphone, Database } from "lucid
 
 const AnimatedSection = ({ children, delay = "0s" }) => {
 	const [ref, isVisible] = useScrollAnimation();
+	
 	return (
 		<section ref={ref} style={{ animationDelay: delay }} className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
 			{children}

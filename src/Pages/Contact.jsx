@@ -1,3 +1,4 @@
+
 import { Mail, Phone, MapPin, Linkedin, Github, Users, ExternalLink, CircleUser } from "lucide-react";
 
 import { useState } from "react";
@@ -52,6 +53,7 @@ const Contact = () => {
 							<div>
 								<p className="text-[10px] font-black tracking-widest text-pink-200 uppercase">Teléfono</p>
 								<p className="text-sm font-medium">+57 304 376 6297</p>
+								<p className="text-sm font-medium">+57 316 318 9083</p>
 							</div>
 						</div>
 						<div className="flex items-start gap-4">

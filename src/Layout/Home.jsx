@@ -3,10 +3,19 @@ import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail, ExternalLink, Code, Zap, Users } from "lucide-react";
 import SEO from "../Components/SEO";
 
+
+const URL_CLOUDINARY = "https://res.cloudinary.com/db5ipg1so/image/upload/v1774969988/20241013_142114_et1701.jpg";
+
+const getOptimized = (url) => {
+	if (!url) return "";
+	return url.replace("/upload/", "/upload/f_auto,q_auto,w_400,c_fill,g_face/");
+};
+
 const AnimatedSection = ({ children, delay = "0s" }) => {
 	const [ref, isVisible] = useScrollAnimation();
 
 	return (
+
 		<section
 			ref={ref}
 			style={{ animationDelay: delay }}
@@ -18,6 +27,7 @@ const AnimatedSection = ({ children, delay = "0s" }) => {
 };
 
 const Home = () => {
+
 	const stats = [
 		{ label: "Años de Experiencia", value: "1+", icon: <Code size={24} /> },
 		{ label: "Proyectos Completados", value: "10+", icon: <Zap size={24} /> },
@@ -31,6 +41,7 @@ const Home = () => {
 		{ href: "/contact", label: "Contacto", icon: <Mail size={20} /> }
 	];
 
+	const imagenOp = getOptimized(URL_CLOUDINARY);
 	return (
 		<>
 			<SEO
@@ -47,9 +58,13 @@ const Home = () => {
 						<div className="text-center max-w-4xl mx-auto">
 							<AnimatedSection delay="0.1s">
 								<div className="mb-8">
-									<div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 flex items-center justify-center text-4xl font-bold text-white shadow-2xl">
-										GL
-									</div>
+									<div className="w-45 h-57 mx-auto mb-6 rounded-full overflow-hidden border-3 border-white/20 shadow-2xl bg-pink-500">
+                                                  <img 
+                                                       src={imagenOp} 
+                                                       alt="Gicela Lozano" 
+                                                       className="w-full h-full object-cover zoom-2" 
+                                                  />
+                                             </div>
 								</div>
 
 								<h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
