@@ -25,7 +25,7 @@ const Header = () => {
 	};
 
 	return (
-		<header className="header-container fixed top-0 left-0 right-0 z-50 w-full bg-amber-800">
+		<header className="header-container fixed top-0 left-0 right-0 z-50 w-full ">
 			<Navbar />
 
 			{/* Imagen responsive con imagen móvil específica */}
