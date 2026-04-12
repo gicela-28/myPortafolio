@@ -1,17 +1,18 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Components/Header";
 import "../Layout/css/Layout.css";
-
+import { Toaster } from 'sonner';
 
 
 const LayoutPublic = () => {
 	// const imagenOptimizada = getOptimizedUrl(URL_CLOUDINARY_BASE);
 	return (
-		<div className="min-h-screen flex flex-col bg-gradient-to-b from-[#16223d] via-[#16223d] to-[#cd708a]">
+		<div className="min-h-screen flex flex-col bg-linear-to-b from-[#16223d] via-[#16223d] to-[#cd708a]">
 			<Header />
 
-			<main className="flex-grow relative pb-10">
-				
+			<main className="grow relative pb-10">
+				<Toaster position="bottom-right" richColors />
+
 				<div className="relative z-10 mx-auto max-w-7xl px-4 pb-5">
 					<Outlet />
 				</div>
