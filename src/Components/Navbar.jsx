@@ -15,22 +15,22 @@ const Navbar = () => {
 
 	return (
 		<header className="sticky z-50 w-full shadow-lg">
-			<nav className="bg-linear-to-r from-[#232942bd] to-[#cd708ac8] backdrop-blur-md h-[4%]" id="nav-content">
-				<div className="container mx-auto md:px-15">
+			<nav className="bg-linear-to-r from-[#232942bd] to-[#cd708ac8] backdrop-blur-md h-[5%]" id="nav-content">
+				<div className="container mx-auto md:px-12 max-w-6xl">
 					<div className="flex flex-col items-center justify-between md:flex-row" id="nav-container">
-						<div className="mb-2 flex items-center md:mb-0" id="logo">
+						<div className="mb-1 flex items-center md:mb-0" id="logo">
 							<NavLink to="/" className="logo flex items-center">
-								<img src={imagenOptimizada} alt="Logo" className="h-9 w-auto transition-all duration-300 md:h-14" />
+								<img src={imagenOptimizada} alt="Logo" className="h-7 w-auto transition-all duration-300 md:h-10" />
 							</NavLink>
 						</div>
 
-						<div className="flex flex-wrap justify-center gap-3 md:gap-6">
+						<div className="flex flex-wrap justify-center gap-2 md:gap-4">
 							{["about", "skills", "experience", "contact"].map((path) => (
 								<NavLink
 									key={path}
 									to={`/${path}`}
 									className={({ isActive }) =>
-										`rounded-md px-4 py-3 text-sm font-medium text-white transition-all hover:bg-[#cd708b] md:text-base ${isActive ? "bg-[#cd708b] shadow-md" : ""
+										`rounded-md px-3 py-2 text-xs font-medium text-white transition-all hover:bg-[#cd708b] md:text-sm md:px-4 md:py-2 ${isActive ? "bg-[#cd708b] shadow-md" : ""
 										}`
 									}
 								>

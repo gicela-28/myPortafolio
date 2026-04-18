@@ -1,25 +1,12 @@
 .header-container {
 	position: relative;
-	width: 100%;
-	height: 250px;
-	overflow: hidden;
+	
 }
 
 .imagen-header {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
+	margin-top: 30px;
 }
 
-.imagen-header img,
-.imagen-header picture {
-	width: 100% !important;
-	height: 100% !important;
-	object-fit: cover !important;
-	object-position: center !important;
-	display: block !important;
-}
 
 .tittle-sha {
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -33,8 +20,8 @@
 /* Mobile: hasta 640px - Prioridad máxima */
 @media screen and (max-width: 640px) {
 	.header-container {
-		height: 180px;
-		min-height: 180px;
+		height: 140px;
+		min-height: 140px;
 	}
 
 	.imagen-header {
@@ -51,12 +38,12 @@
 	}
 
 	.tittle-sha h1 {
-		font-size: 1.25rem !important;
+		font-size: 1rem !important;
 		line-height: 1.2;
 	}
 
 	.tittle-sha h3 {
-		font-size: 0.875rem !important;
+		font-size: 0.75rem !important;
 		line-height: 1.3;
 	}
 }
@@ -64,12 +51,27 @@
 /* Small tablets: 641px - 767px */
 @media screen and (min-width: 641px) and (max-width: 767px) {
 	.header-container {
-		height: 200px;
+		height: 160px;
 	}
 
 	.imagen-header img,
 	.imagen-header picture {
 		object-position: center;
+	}
+
+	.tittle-sha h1 {
+		font-size: 1.25rem !important;
+	}
+
+	.tittle-sha h3 {
+		font-size: 0.875rem !important;
+	}
+}
+
+/* Tablets: 768px - 1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.header-container {
+		height: 170px;
 	}
 
 	.tittle-sha h1 {
@@ -81,10 +83,10 @@
 	}
 }
 
-/* Tablets: 768px - 1023px */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+/* Small desktops: 1024px - 1279px */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
 	.header-container {
-		height: 220px;
+		height: 180px;
 	}
 
 	.tittle-sha h1 {
@@ -96,10 +98,10 @@
 	}
 }
 
-/* Small desktops: 1024px - 1279px */
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
+/* Large desktops: 1280px+ */
+@media screen and (min-width: 1280px) {
 	.header-container {
-		height: 240px;
+		height: 200px;
 	}
 
 	.tittle-sha h1 {
@@ -111,33 +113,18 @@
 	}
 }
 
-/* Large desktops: 1280px+ */
-@media screen and (min-width: 1280px) {
-	.header-container {
-		height: 280px;
-	}
-
-	.tittle-sha h1 {
-		font-size: 2.5rem !important;
-	}
-
-	.tittle-sha h3 {
-		font-size: 1.5rem !important;
-	}
-}
-
 /* Extra large screens: 1920px+ */
 @media screen and (min-width: 1920px) {
 	.header-container {
-		height: 320px;
-		max-height: 40vh;
+		height: 220px;
+		max-height: 35vh;
 	}
 
 	.tittle-sha h1 {
-		font-size: 3rem !important;
+		font-size: 2.25rem !important;
 	}
 
 	.tittle-sha h3 {
-		font-size: 1.75rem !important;
+		font-size: 1.375rem !important;
 	}
 }

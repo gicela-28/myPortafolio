@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import "../Components/Css/Header.css";
 
 // URLs de imágenes en Cloudinary
-const URL_CLOUDINARY_DESKTOP = "https://res.cloudinary.com/db5ipg1so/image/upload/v1775762803/HeaderN_zipwkc.png";
+const URL_CLOUDINARY_DESKTOP = "https://res.cloudinary.com/db5ipg1so/image/upload/v1776480065/HeaderNcopia_jkbqoa.png";
 // URL para móvil - DEBES REEMPLAZAR ESTA CON TU IMAGEN MÓVIL OPTIMIZADA
 const URL_CLOUDINARY_MOBILE = "https://res.cloudinary.com/db5ipg1so/image/upload/q_auto/f_auto/v1775767062/FondoPeq_pjsmam.png";
 
@@ -45,9 +45,9 @@ const Header = () => {
 						loading="eager"
 						style={{
 							objectPosition: 'center',
-							minHeight: '100%',
+							minHeight: '90%',
 							width: '100%',
-							height: '100%'
+
 						}}
 					/>
 				</picture>
@@ -55,12 +55,10 @@ const Header = () => {
 
 			<section className="absolute inset-0 z-10 flex w-full items-center justify-center px-4 py-2 md:py-4">
 				<div className="tittle-sha mx-auto flex flex-col items-center space-y-4 md:space-y-7 text-center text-white">
-					<h1 className="mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg">
+					<h1 className="mb-2 text-2xs sm:text-2xl md:text-3xl lg:text-3xl font-bold drop-shadow-lg">
 						Bienvenidos a mi Portafolio
 					</h1>
-					<h3 className="text-sm sm:text-base md:text-lg lg:text-xl drop-shadow-md">
-						Aquí está toda mi Información
-					</h3>
+					
 				</div>
 			</section>
 		</header>

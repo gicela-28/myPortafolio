@@ -20,10 +20,9 @@ const Experience = () => {
 			location: "Remoto",
 			description: "Desarrollo de sitios web y aplicaciones para clientes diversos, especializándome en interfaces modernas y responsivas con React y JavaScript.",
 			achievements: [
-				"Completé 10+ proyectos para clientes en diferentes industrias",
 				"Implementé diseños responsivos compatibles con todos los dispositivos",
 				"Optimicé el rendimiento de sitios web mejorando tiempos de carga en un 40%",
-				"Colaboré directamente con clientes para traducir requisitos técnicos en soluciones funcionales"
+
 			],
 			technologies: ["React", "JavaScript ES6+", "Tailwind CSS", "HTML5", "CSS3", "Git"],
 			type: "work"
@@ -37,11 +36,9 @@ const Experience = () => {
 			description: "Desarrollo de proyectos personales para fortalecer habilidades y explorar nuevas tecnologías.",
 			achievements: [
 				"Creé un portafolio interactivo con animaciones GSAP",
-				"Desarrollé un e-commerce completo con React y Node.js",
-				"Implementé dashboards con visualización de datos en tiempo real",
 				"Exploré patrones de diseño y arquitecturas modernas"
 			],
-			technologies: ["React", "Node.js", "MongoDB", "GSAP", "Chart.js", "Framer Motion"],
+			technologies: ["React", "Node.js", "MongoDB", "GSAP", "Framer Motion"],
 			type: "work"
 		}
 	];
@@ -55,8 +52,7 @@ const Experience = () => {
 			location: "Online",
 			description: "Formación intensiva en desarrollo web moderno a través de cursos, documentación y práctica constante.",
 			achievements: [
-				"Completé cursos avanzados de React y JavaScript moderno",
-				"Participé en comunidades de desarrollo y open source",
+				"Completé cursos avanzados de React",
 				"Realicé proyectos prácticos para aplicar conocimientos",
 				"Mantengo actualización constante con nuevas tecnologías"
 			],
@@ -73,10 +69,8 @@ const Experience = () => {
 			achievements: [
 				"Certificación en React y JavaScript avanzado",
 				"Cursos de diseño UI/UX y accesibilidad web",
-				"Formación en optimización de rendimiento y SEO",
-				"Workshops de Git y control de versiones"
 			],
-			technologies: ["React", "UI/UX Design", "Performance Optimization", "SEO", "Git"],
+			technologies: ["React", "UI/UX Design", "Git"],
 			type: "education"
 		}
 	];
@@ -88,20 +82,19 @@ const Experience = () => {
 		return (
 			<div className="relative group">
 				{/* Timeline line */}
-				<div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#cd708a] to-transparent opacity-30"></div>
+				<div className="absolute left-5 top-5 bottom-0 w-0.5 bg-linear-to-b from-[#cd708a] to-transparent opacity-30"></div>
 
 				{/* Timeline dot */}
-				<div className="absolute left-6 top-8 w-4 h-4 bg-[#cd708a] rounded-full border-4 border-[#16223d] z-10"></div>
+				<div className="absolute left-4 top-9 w-4 h-4 bg-[#cd708a] rounded-full border-4 border-[#16223d] z-10"></div>
 
 				{/* Card */}
-				<div className="ml-16 bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:scale-[1.02] transition-all duration-300 group-hover:bg-white/15">
+				<div className="ml-9 bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:scale-[1.02] transition-all duration-300 group-hover:bg-white/15">
 					<div className="flex items-start justify-between mb-4">
 						<div className="flex-1">
 							<div className="flex items-center gap-3 mb-2">
-								<Icon size={20} className="text-pink-400" />
-								<h3 className="text-xl font-bold text-white">{isWork ? item.position : item.degree}</h3>
+								<Icon size={17} className="text-pink-400" />
+								<h3 className="text-l font-bold text-white">{isWork ? item.position : item.degree}</h3>
 							</div>
-							<h4 className="text-lg text-pink-300 mb-2">{isWork ? item.company : item.institution}</h4>
 						</div>
 						<div className="text-right">
 							<div className="flex items-center gap-2 text-gray-300 text-sm mb-1">
@@ -115,14 +108,14 @@ const Experience = () => {
 						</div>
 					</div>
 
-					<p className="text-gray-300 mb-4">{item.description}</p>
+					<p className="text-gray-300 mb-3">{item.description}</p>
 
 					<div className="mb-4">
-						<h5 className="text-sm font-semibold text-pink-300 mb-2">Logros destacados:</h5>
+						<h5 className="text-xs font-semibold text-pink-300 mb-2">Logros destacados:</h5>
 						<ul className="space-y-1">
 							{item.achievements.map((achievement, i) => (
-								<li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
-									<div className="w-1.5 h-1.5 bg-pink-400 rounded-full mt-2 flex-shrink-0"></div>
+								<li key={i} className="flex items-start gap-2 text-gray-300 text-xs">
+									<div className="w-1.5 h-1.5 bg-pink-400 rounded-full mt-1 shrink-0"></div>
 									{achievement}
 								</li>
 							))}
@@ -145,51 +138,44 @@ const Experience = () => {
 	};
 
 	return (
-		<div className="min-h-screen py-12">
-			<div className="container mx-auto px-4">
-				<AnimatedSection delay="0.1s">
-					<div className="text-center mb-16">
-						<h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Experiencia & Educación</h1>
-						<p className="text-xl text-gray-300 max-w-2xl mx-auto">
-							Mi trayectoria profesional y formación en desarrollo web
-						</p>
-					</div>
-				</AnimatedSection>
-
-				<AnimatedSection delay="0.2s">
-					<div className="mb-16">
-						<div className="flex items-center gap-3 mb-8">
-							<Briefcase size={24} className="text-pink-400" />
-							<h2 className="text-2xl font-bold text-white">Experiencia Laboral</h2>
+		<div className=" items-center min-h-screen mt-12">
+			<div className="z-10 flex   md:flex-row  text-white flex-col">
+				<div className="experiencia  flex max-w-[700px] min-w-[280px] flex-1">
+					<AnimatedSection delay="0.2s">
+						<div className="mb-8 flex-col-1">
+							<div className="title text-center gap-0 mb-4">
+								<h2 className="text-md font-bold text-pink-200 text-center">Experiencia Laboral</h2>
+								<p className="text-xs text-gray-300 max-w-2xl mx-auto">
+									Mi trayectoria profesional y logros académicos
+								</p>
+							</div>
+							<div className="space-y-4">
+								{workExperience.map((item) => (
+									<TimelineCard key={item.id} item={item} />
+								))}
+							</div>
 						</div>
+					</AnimatedSection>
+				</div>
+				<div className="educacion flex max-w-[700px] min-w-[280px] flex-1">
 
-						<div className="space-y-8">
-							{workExperience.map((item) => (
-								<TimelineCard key={item.id} item={item} />
-							))}
+					<AnimatedSection delay="0.3s">
+						<div className="flex-col-2">
+							<h2 className="text-md font-bold text-pink-200 mb-6 text-center">Educación</h2>
+							<div className="space-y-4">
+								{education.map((item) => (
+									<TimelineCard key={item.id} item={item} />
+								))}
+							</div>
 						</div>
-					</div>
-				</AnimatedSection>
+					</AnimatedSection>
+				</div>
 
-				<AnimatedSection delay="0.3s">
-					<div>
-						<div className="flex items-center gap-3 mb-8">
-							<GraduationCap size={24} className="text-pink-400" />
-							<h2 className="text-2xl font-bold text-white">Educación</h2>
-						</div>
-
-						<div className="space-y-8">
-							{education.map((item) => (
-								<TimelineCard key={item.id} item={item} />
-							))}
-						</div>
-					</div>
-				</AnimatedSection>
-
+			</div>
 				<AnimatedSection delay="0.4s">
-					<div className="mt-16 text-center">
-						<div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
-							<div className="flex items-center justify-center gap-3 mb-4">
+					<div className="mb-16 text-center">
+						<div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20">
+							<div className="flex items-center justify-center gap-3 mb-3">
 								<Award size={24} className="text-pink-400" />
 								<h3 className="text-xl font-bold text-white">Resumen Profesional</h3>
 							</div>
@@ -214,7 +200,6 @@ const Experience = () => {
 						</div>
 					</div>
 				</AnimatedSection>
-			</div>
 		</div>
 	);
 };
