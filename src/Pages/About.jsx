@@ -6,10 +6,10 @@ import "../Pages/Css/About.css";
 
 const About = () => {
 	return (
-		<div className="  items-center  py-20 justify-center align-center flex  ">
-			<div className="z-10 flex w-full  flex-col-2 gap-5 text-white">
-				
-				<section className="fade-in-card rounded-xl flex-1 max-w-[700px] min-w-[280px] bg-[#cd708a9c] shadow-2xl backdrop-blur-md transition-all hover:scale-105 p-6">
+		<div className="flex flex-col items-center py-10 justify-center">
+			<div className="z-10 flex w-full flex-col md:flex-row gap-5 text-white">
+
+				<section className="fade-in-card rounded-xl max-w-[670px] min-w-[250px] flex-1 bg-[#cd708a9c] shadow-2xl backdrop-blur-md transition-all hover:scale-105 p-6">
 					<div className="flex items-start gap-4">
 						<div className="shrink-0">
 							<div className="w-16 h-16 rounded-full bg-linear-to-br from-pink-400 to-purple-600 flex items-center justify-center text-xl font-bold">
@@ -25,10 +25,8 @@ const About = () => {
 						</div>
 					</div>
 				</section>
-				
 
-				
-				<section className="fade-in-card rounded-xl flex-1 max-w-[650px] min-w-[280px] border  border-white/10 bg-[#cd708a9c] p-4 shadow-2xl backdrop-blur-md transition-all hover:scale-105">
+				<section className="fade-in-card rounded-xl max-w-[670px] min-w-[250px] flex-1 border border-white/10 bg-[#cd708a9c] p-4 shadow-2xl backdrop-blur-md transition-all hover:scale-105">
 					<h2 className="text-xl font-bold mb-4 text-pink-200">Mi Especialidad</h2>
 					<div className="grid md:grid-cols-2 gap-4">
 						<div className="space-y-2">
@@ -51,10 +49,8 @@ const About = () => {
 						</div>
 					</div>
 				</section>
-				
 
-			
-				<section className="fade-in-card rounded-xl  flex-1 max-w-[700px] min-w-[280px] border border-white/10 bg-[#cd708a9c] p-8 shadow-2xl backdrop-blur-md transition-all hover:scale-105">
+				<section className="fade-in-card rounded-xl max-w-[670px] min-w-[250px] flex-1 border border-white/10 bg-[#cd708a9c] p-8 shadow-2xl backdrop-blur-md transition-all hover:scale-105">
 					<h2 className="text-2xl font-bold mb-6 text-pink-200">Mi Filosofía</h2>
 					<div className="space-y-4 text-gray-200">
 						<p>
@@ -68,7 +64,7 @@ const About = () => {
 						</p>
 					</div>
 				</section>
-				
+
 			</div>
 		</div>
 	);

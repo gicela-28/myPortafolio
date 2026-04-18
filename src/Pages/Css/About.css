@@ -1,13 +1,15 @@
-
 #text1,
 #text2,
 #text3 {
-	/* background-color: rgba(255, 255, 255, 0.8); */
-	/* padding: 1.5rem; */
-	border-radius: 10px;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(205, 112, 138, 0.1));
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 1.5rem;
+	border-radius: 15px;
 	font-size: 1.3rem;
 	line-height: 1.6;
 	color: #ffffff;
+	box-shadow: 0 8px 32px rgba(205, 112, 138, 0.3);
 }
 
 /* Definimos la animación */
@@ -16,6 +18,7 @@
 		opacity: 0;
 		transform: translateY(30px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateY(0);
@@ -24,10 +27,13 @@
 
 /* Creamos la clase que React usará */
 .fade-in-card {
-	opacity: 0; /* Empezamos invisibles */
-	animation: fadeInUp 0.8s ease-out forwards;
+	opacity: 0;
+	/* Empezamos invisibles */
+	animation: fadeInUp 0.9s ease-out forwards;
 }
+
 @media screen and (max-width: 640px) {
+
 	#text1,
 	#text2,
 	#text3 {
@@ -38,8 +44,9 @@
 		line-height: 1;
 		color: #ffffff;
 	}
+
 	.section {
-		max-width: 100%;
-		
+		margin: 0;
+		padding: 0;
 	}
 }

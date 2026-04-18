@@ -157,7 +157,7 @@ const Experience = () => {
 						</div>
 					</AnimatedSection>
 				</div>
-				<div className="educacion flex max-w-[700px] min-w-[280px] flex-1">
+				<div className="educacion flex max-w-[700px] min-w-[280px] flex-1 mt-2">
 
 					<AnimatedSection delay="0.3s">
 						<div className="flex-col-2">
@@ -173,7 +173,7 @@ const Experience = () => {
 
 			</div>
 				<AnimatedSection delay="0.4s">
-					<div className="mb-16 text-center">
+					<div className="mt-7 mb-14 text-center">
 						<div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20">
 							<div className="flex items-center justify-center gap-3 mb-3">
 								<Award size={24} className="text-pink-400" />

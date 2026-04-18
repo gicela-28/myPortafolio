@@ -25,7 +25,7 @@ const Header = () => {
 	};
 
 	return (
-		<header className="header-container fixed top-0 left-0 right-0 z-50 w-full ">
+		<header className="header-container fixed top-0 left-0 right-0 z-50 w-ful h-72 ">
 			<Navbar />
 
 			{/* Imagen responsive con imagen móvil específica */}
@@ -44,21 +44,21 @@ const Header = () => {
 						className="w-full h-full object-cover"
 						loading="eager"
 						style={{
-							objectPosition: 'center',
-							minHeight: '90%',
+							objectPosition: 'center top',
+							minHeight: '100%',
 							width: '100%',
-
+							height: '100%'
 						}}
 					/>
 				</picture>
 			</div>
 
-			<section className="absolute inset-0 z-10 flex w-full items-center justify-center px-4 py-2 md:py-4">
+			<section className="absolute inset-0 z-10 flex w-full items-center justify-center px-2 py-2 md:py-4 mt-1">
 				<div className="tittle-sha mx-auto flex flex-col items-center space-y-4 md:space-y-7 text-center text-white">
-					<h1 className="mb-2 text-2xs sm:text-2xl md:text-3xl lg:text-3xl font-bold drop-shadow-lg">
+					<h2 className="mb-2 text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold drop-shadow-lg">
 						Bienvenidos a mi Portafolio
-					</h1>
-					
+					</h2>
+
 				</div>
 			</section>
 		</header>

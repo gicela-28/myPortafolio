@@ -65,7 +65,7 @@ const Contact = () => {
 
 
 	return (
-		<div className="contact-container z-0 flex flex-col-3 items-center md:p-8 px-4 py-8">
+		<div className="contact-container z-0 flex flex-col items-center md:p-8 px-4 py-5 ">
 			<div className="flex w-full max-w-5xl flex-wrap justify-center gap-4">
 
 				{/* Tarjeta 1: Información */}
@@ -197,7 +197,7 @@ const Contact = () => {
 				</section>
 
 				{/* Tarjeta 3: Referencias */}
-				<section className=" max-w-[450px] min-w-[280px] flex-2 w-full rounded-2xl border border-white/10 bg-[#cd708a9c] p-6 text-white shadow-2xl backdrop-blur-md">
+				<section className=" max-w-[450px] min-w-[280px] flex-1 w-full rounded-2xl border border-white/10 bg-[#cd708a9c] p-6 text-white shadow-2xl backdrop-blur-md">
 					<div className="mb-6 flex items-center justify-center gap-3">
 						<Users className="text-pink-200" size={24} />
 						<h2 className="text-lg font-bold italic">Referencias Profesionales</h2>
